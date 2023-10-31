@@ -623,7 +623,8 @@ if [[ -z "${EXTENSIONS##*,rdkafka,*}" ]]; then
 
     if [[ "$?" = "1" ]]; then
         apk add librdkafka-dev
-        printf "\n" | pecl install rdkafka
+        # printf "\n" | pecl install rdkafka
+        printf "\n" | pecl install rdkafka http://pecl.php.net/get/rdkafka-4.1.2.tgz
         docker-php-ext-enable rdkafka
     else
         echo "---------- PHP Version>= 5.6----------"
